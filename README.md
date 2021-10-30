@@ -1,16 +1,33 @@
-# voice_split
+# Flutter App Skeleton With GetX
 
-A new Flutter project.
+##### version: 0.0.1
 
-## Getting Started
+A project structure is design on flutter with the getX state management tool
 
-This project is a starting point for a Flutter application.
+**Project Structure**
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+project
+└─── lib
+    └─── src
+        └─── controller
+            |   base_controller.dart
+            |   ...
+        └─── core
+            └───theme
+            └───utilities
+        └─── routes
+            |   app_pages.dart
+            |   app_routes.dart
+        └─── services
+            |   app_exceptions.dart
+            |   base_client.dart
+            |   ...
+        └─── views
+            └───homeScreen
+            └───splashScreen
+            └───...
+    │   main.dart
+│   README.md
+│   ...
+```
