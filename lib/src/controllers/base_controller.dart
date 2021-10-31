@@ -1,5 +1,5 @@
-import 'package:voice_split/src/core/utilities/dailog_helper.dart';
-import 'package:voice_split/src/services/app_exceptions.dart';
+import 'package:flutter_skeleton/src/core/utilities/dailog_helper.dart';
+import 'package:flutter_skeleton/src/services/app_exceptions.dart';
 
 class BaseController {
   void handleError(error) {

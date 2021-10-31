@@ -1,5 +1,6 @@
-import 'package:voice_split/src/controllers/base_controller.dart';
-import 'package:voice_split/src/services/base_client.dart';
+import 'package:flutter_skeleton/src/services/base_client.dart';
+
+import 'base_controller.dart';
 
 class TestController with BaseController {
   void getData() async {

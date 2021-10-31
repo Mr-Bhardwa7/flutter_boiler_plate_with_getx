@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_skeleton/src/routes/app_pages.dart';
 import 'package:get/get.dart';
-import 'package:voice_split/src/routes/app_pages.dart';
 
 class SpalshScreen extends StatefulWidget {
   const SpalshScreen({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _SpalshScreenState extends State<SpalshScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 2300),
+      duration: const Duration(milliseconds: 2300),
     );
 
     _animationController

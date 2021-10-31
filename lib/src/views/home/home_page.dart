@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voice_split/src/controllers/test_controller.dart';
+import 'package:flutter_skeleton/src/controllers/test_controller.dart';
 
 // ignore: use_key_in_widget_constructors
 class HomePage extends StatelessWidget {
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
       color: Theme.of(context).scaffoldBackgroundColor,
       child: Center(
         child: ElevatedButton(
-          child: Text("Text"),
+          child: const Text("Text"),
           onPressed: () {
             controller.getData();
           },

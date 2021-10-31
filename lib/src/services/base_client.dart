@@ -3,17 +3,20 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-import 'package:voice_split/src/services/app_exceptions.dart';
+
+import 'app_exceptions.dart';
 
 class BaseClient {
+  // ignore: constant_identifier_names
   static const int TIME_OUT_DURATION = 20;
 
   //GET
   Future<dynamic> get(String baseUrl, String api) async {
     var uri = Uri.parse(baseUrl + api);
     try {
-      var response =
-          await http.get(uri).timeout(Duration(seconds: TIME_OUT_DURATION));
+      var response = await http
+          .get(uri)
+          .timeout(const Duration(seconds: TIME_OUT_DURATION));
       return _processResponse(response);
     } on SocketException {
       throw FetchDataException("No internet connection", uri.toString());
@@ -30,7 +33,7 @@ class BaseClient {
     try {
       var response = await http
           .post(uri, body: payload)
-          .timeout(Duration(seconds: TIME_OUT_DURATION));
+          .timeout(const Duration(seconds: TIME_OUT_DURATION));
       return _processResponse(response);
     } on SocketException {
       throw FetchDataException("No internet connection", uri.toString());

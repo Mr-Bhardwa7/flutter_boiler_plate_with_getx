@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import 'src/core/bindings/app_binding.dart';
 import 'src/core/theme/app_theme.dart';
 import 'src/routes/app_pages.dart';
 import 'src/views/splashScreen/splash_screen.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.INITIAL,
-      home: SpalshScreen(),
+      initialBinding: AppBinding(),
+      home: const SpalshScreen(),
       getPages: AppPages.pages,
       theme: appThemeData,
       defaultTransition: Transition.rightToLeftWithFade,
