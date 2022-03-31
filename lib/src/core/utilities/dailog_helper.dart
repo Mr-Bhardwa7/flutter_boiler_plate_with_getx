@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class DialogHelper {
   static void showErrorDialog(
@@ -41,5 +42,65 @@ class DialogHelper {
   // hide loading
   static void hideLoading() {
     if (Get.isDialogOpen != null) Get.back();
+  }
+
+/* Permisison Declined - open setting  */
+  static void showPermissionDeniedPopup(
+      {required BuildContext context,
+      required String title,
+      required String message}) {
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            title,
+            softWrap: true,
+            textAlign: TextAlign.center,
+            textDirection: TextDirection.ltr,
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.none),
+          ),
+          elevation: 50.0,
+          scrollable: true,
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  message,
+                  softWrap: true,
+                  textAlign: TextAlign.center,
+                  textDirection: TextDirection.ltr,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.w400,
+                      decoration: TextDecoration.none),
+                )
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              child: Text("Cancel"),
+              onPressed: () async {
+                Navigator.pop(context);
+              },
+            ),
+            TextButton(
+              child: Text("Setting"),
+              onPressed: () async {
+                await openAppSettings();
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 }

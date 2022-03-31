@@ -1,6 +1,6 @@
-# Flutter App Skeleton With GetX
+# Flutter App Biolerplate With GetX
 
-##### version: 0.0.2
+##### version: 0.0.3
 
 A project structure is design on flutter with the getX state management tool
 
@@ -37,6 +37,16 @@ project
             └─── splashScreen
             └─── ...
     │   main.dart
+    │   config.dart
+    
 │   README.md
 │   ...
 ```
+
+**How to use this biolerplate**
+
+1. Fork the repository **"flutter_boiler_plate_with_getx"**.
+2. Create a new repository
+   * Under **"Repository template"** used your fork **"flutter_boiler_plate_with_getx"** repository as a template
+   * Fill the below field and create repository
+3. Clone your repository and start working. 

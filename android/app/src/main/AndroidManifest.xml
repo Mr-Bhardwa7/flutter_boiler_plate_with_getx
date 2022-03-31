@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.voice_split">
+    package="com.example.flutter_skeleton">
 
     <!-- Permissions options for the `camera` group -->
     <uses-permission android:name="android.permission.CAMERA"/>
     
    <application
-        android:label="voice_split"
+        android:label="flutter_skeleton"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

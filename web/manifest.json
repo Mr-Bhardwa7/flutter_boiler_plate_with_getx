@@ -1,6 +1,6 @@
 {
-    "name": "voice_split",
-    "short_name": "voice_split",
+    "name": "flutter_skeleton",
+    "short_name": "flutter_skeleton",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

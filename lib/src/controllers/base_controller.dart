@@ -10,7 +10,8 @@ class BaseController {
       DialogHelper.showErrorDialog(description: error.message);
     } else if (error is ApiNotRespondingException) {
       DialogHelper.showErrorDialog(
-          description: "Opps! It took longer to respond.");
+        description: "Opps! It took longer to respond.",
+      );
     }
   }
 
