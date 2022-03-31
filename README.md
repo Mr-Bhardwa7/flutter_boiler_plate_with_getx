@@ -49,4 +49,6 @@ project
 2. Create a new repository
    * Under **"Repository template"** used your fork **"flutter_boiler_plate_with_getx"** repository as a template
    * Fill the below field and create repository
-3. Clone your repository and start working. 
+3. Clone your repository and change package name.
+   * Change the package name under the pubspec.yaml and all the pages which import file with package name and under AndroidManifest file. 
+4. You are ready to start development. 
