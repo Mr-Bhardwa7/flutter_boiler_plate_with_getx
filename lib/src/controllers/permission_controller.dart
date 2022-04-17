@@ -7,9 +7,13 @@ import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import 'base_controller.dart';
+ 
+//TODO: Add your app permisison here
+enum AppPermisisons { camera, photoOrGallery }
 
 class PermissionController extends GetxController with BaseController {
   int _cameraRequestedCount = 0;
+  int _photoRequestedCount = 0;
 
   @override
   // ignore: unnecessary_overrides
@@ -36,6 +40,38 @@ class PermissionController extends GetxController with BaseController {
       requestedCount: _cameraRequestedCount,
     );
     _cameraRequestedCount = _cameraRequestedCount + 1;
+  }
+  
+   /* Photo and Gallery Permisison Sample Function */
+  Future<void> checkPhotoAndGalleryPermisison(
+      {required final OnGranted onGranted}) async {
+    await GrantPermissionPhotos().request(
+      onPermatentlyDenied: () async {
+        //TODO: launch dialog, make user go to app settings
+        print("Granted Gallery Denied");
+        await openAppSettings();
+      },
+      onGranted: onGranted,
+      requestedCount: _photoRequestedCount,
+    );
+   _photoRequestedCount = _photoRequestedCount + 1;
+  }
+
+
+ /* Check has permission */
+  Future<PermissionStatus> hasPermission(
+      {required AppPermisisons appPermisisons}) async {
+    //TODO: Update the switch case as per your AppPermisisons enum values.
+    switch (appPermisisons) {
+      case AppPermisisons.camera:
+        PermissionStatus status = await Permission.camera.status;
+        return status;
+      case AppPermisisons.photoOrGallery:
+        PermissionStatus status = Platform.isAndroid
+            ? await Permission.storage.status
+            : await Permission.photos.status;
+        return status;
+    }
   }
 
   /* Microphone and Stroage (Multiple Permision) Sample */
