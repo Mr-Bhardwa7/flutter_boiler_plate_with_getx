@@ -1,6 +1,6 @@
 # Flutter App Biolerplate With GetX
 
-##### version: 0.0.3
+##### version: 0.0.4
 
 A project structure is design on flutter with the getX state management tool
 
@@ -17,6 +17,8 @@ project
         └─── core
             └─── bindings
             |    app_binding.dart
+            └─── extensions
+            |    find_or_put_extension.dart
             └─── theme
             |    app_theme.dart
             |    colors.style.dart
